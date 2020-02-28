@@ -1,35 +1,40 @@
 from display import *
 from draw import *
+from parser import *
 from matrix import *
 
 screen = new_screen()
-color = [ 255, 182, 193 ]
-matrix = new_matrix(0,0)
+color = [ 0, 255, 0 ]
+edges = []
+transform = new_matrix()
 
+#parse_file( 'script', edges, transform, screen, color )
 #lol
-add_edge(matrix, 0, 0, 0, 100, 0, 0)
+add_edge(transform, 0, 0, 0, 100, 0, 0)
 #lol
-add_edge(matrix, 100, 0, 0, 100, 100, 0)
+add_edge(transform, 100, 0, 0, 100, 100, 0)
 #lol
-add_edge(matrix, 100, 100, 0, 0, 100, 0)
+add_edge(transform, 100, 100, 0, 0, 100, 0)
 #lol
-add_edge(matrix, 0, 100, 0, 0, 0, 0)
+add_edge(transform, 0, 100, 0, 0, 0, 0)
 #lol
-add_edge(matrix, 0, 0, 100, 100, 0, 100)
+add_edge(transform, 0, 0, 100, 100, 0, 100)
 #lol
-add_edge(matrix, 100, 0, 100, 100, 100, 100)
+add_edge(transform, 100, 0, 100, 100, 100, 100)
 #lol
-add_edge(matrix, 100, 100, 100, 0, 100, 100)
+add_edge(transform, 100, 100, 100, 0, 100, 100)
 #lol
-add_edge(matrix, 0, 100, 100, 0, 0, 100)
+add_edge(transform, 0, 100, 100, 0, 0, 100)
 #lol
-add_edge(matrix, 0, 0, 0, 0, 0, 100)
+add_edge(transform, 0, 0, 0, 0, 0, 100)
 #lol
-add_edge(matrix, 0, 100, 0, 0, 100, 100)
+add_edge(transform, 0, 100, 0, 0, 100, 100)
 #lol
-add_edge(matrix, 100, 100, 0, 100, 100, 100)
+add_edge(transform, 100, 100, 0, 100, 100, 100)
 #lol
-add_edge(matrix, 100, 0, 0, 100, 0, 100)
+add_edge(transform, 100, 0, 0, 100, 0, 100)
 
-draw_lines( matrix, screen, color )
+#make_scale(transform,2,2,2)
+
+draw_lines( transform, screen, color )
 display(screen)
