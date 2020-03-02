@@ -33,9 +33,9 @@ def make_rotX(matrix, theta ):
 
 def make_rotY(matrix, theta ):
     rad = math.radians(theta)
-    id = [[math.cos(rad), 0,math.sin(rad),0],
+    id = [[math.cos(rad), 0,-math.sin(rad),0],
           [0,             1,0,            0],
-          [-math.sin(rad),0,math.cos(rad),0],
+          [math.sin(rad),0,math.cos(rad),0],
           [0,             0,0,            1]]
     matrix_mult(id,matrix)
 
