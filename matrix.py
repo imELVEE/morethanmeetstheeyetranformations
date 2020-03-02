@@ -25,10 +25,10 @@ def make_scale(matrix, x, y, z ):
 
 def make_rotX(matrix, theta ):
     rad = math.radians(theta)
-    id = [[1,0,            0,             0],
-          [0,math.cos(rad),-math.sin(rad),0],
-          [0,math.sin(rad),math.cos(rad), 0],
-          [0,0,            0,             1]]
+    id = [[1,0,             0,             0],
+          [0,math.cos(rad), math.sin(rad), 0],
+          [0,-math.sin(rad),math.cos(rad), 0],
+          [0,0,             0,             1]]
     matrix_mult(id,matrix)
 
 def make_rotY(matrix, theta ):
@@ -41,8 +41,8 @@ def make_rotY(matrix, theta ):
 
 def make_rotZ(matrix, theta ):
     rad = math.radians(theta)
-    id = [[math.cos(rad), -math.sin(rad),0,0],
-          [math.sin(rad),math.cos(rad),0,0],
+    id = [[math.cos(rad), math.sin(rad),0,0],
+          [-math.sin(rad),math.cos(rad),0,0],
           [0,             0,            1,0],
           [0,             0,            0,1]]
     matrix_mult(id,matrix)
