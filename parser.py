@@ -32,4 +32,49 @@ The file follows the following format:
 See the file script for an example of the file format
 """
 def parse_file( fname, points, transform, screen, color ):
-    pass
+    file = open(fname,'r')
+    commands = file.readlines()
+    i = 0
+    while i < len(commands):
+        if commands[i] == 'line\n':
+            p = commands[i+1].split(' ')
+            add_edge(points,int(p[0]),int(p[1]),int(p[2]),int(p[3]),int(p[4]),int(p[5]))
+
+        if commands[i] == 'ident\n':
+            ident(transform)
+
+        if commands[i] == 'scale\n':
+            p = commands[i+1].split(' ')
+            make_scale(transform,int(p[0]),int(p[1]),int(p[2]))
+
+        if commands[i] == 'move\n':
+            p = commands[i+1].split(' ')
+            make_translate(transform,int(p[0]),int(p[1]),int(p[2]))
+
+        if commands[i] == 'rotate\n':
+            p = commands[i+1].split(' ')
+            if p[0] == 'x':
+                make_rotX(transform,int(p[1]))
+            if p[0] == 'y':
+                make_rotY(transform,int(p[1]))
+            if p[0] == 'z':
+                make_rotZ(transform,int(p[1]))
+
+        if commands[i] == 'apply\n':
+            matrix_mult(transform,points)
+
+        if commands[i] == 'display\n':
+            clear_screen()
+            draw_lines(points, screen, color)
+            display(screen)
+
+        if commands[i] == "save\n":
+            p = commands[i+1]
+            clear_screen(screen)
+            draw_lines(points, screen, color)
+            save_ppm(screen, p[:-1])
+
+        if commands[i] == 'quit\n':
+            break
+
+        i += 1

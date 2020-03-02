@@ -8,7 +8,8 @@ color = [ 0, 255, 0 ]
 edges = []
 transform = new_matrix()
 
-#parse_file( 'script', edges, transform, screen, color )
+parse_file( 'script', edges, transform, screen, color )
+"""
 #lol
 add_edge(transform, 0, 0, 0, 100, 0, 0)
 #lol
@@ -38,3 +39,4 @@ make_scale(transform,2,2,2)
 
 draw_lines( transform, screen, color )
 display(screen)
+"""

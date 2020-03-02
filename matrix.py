@@ -10,7 +10,11 @@ z0  z1  ... zn
 import math
 
 def make_translate( x, y, z ):
-    pass
+    id = [[1,0,0,x],
+          [0,1,0,y],
+          [0,0,1,z],
+          [0,0,0,1]]
+    matrix_mult(id,matrix)
 
 def make_scale(matrix, x, y, z ):
     id = [[x,0,0,0],
@@ -19,14 +23,29 @@ def make_scale(matrix, x, y, z ):
           [0,0,0,1]]
     matrix_mult(id,matrix)
 
-def make_rotX( theta ):
-    pass
+def make_rotX(matrix, theta ):
+    rad = math.radians(theta)
+    id = [[1,0,            0,             0],
+          [0,math.cos(rad),-math.sin(rad),0],
+          [0,math.sin(rad),math.cos(rad), 0],
+          [0,0,            0,             1]]
+    matrix_mult(id,matrix)
 
-def make_rotY( theta ):
-    pass
+def make_rotY(matrix, theta ):
+    rad = math.radians(theta)
+    id = [[math.cos(rad), 0,math.sin(rad),0],
+          [0,             1,0,            0],
+          [-math.sin(rad),0,math.cos(rad),0],
+          [0,             0,0,            1]]
+    matrix_mult(id,matrix)
 
-def make_rotZ( theta ):
-    pass
+def make_rotZ(matrix, theta ):
+    rad = math.radians(theta)
+    id = [[math.cos(rad), math.sin(rad),0,0],
+          [-math.sin(rad),math.cos(rad),0,0],
+          [0,             0,            1,0],
+          [0,             0,            0,1]]
+    matrix_mult(id,matrix)
 
 #print the matrix such that it looks like
 #the template in the top comment
