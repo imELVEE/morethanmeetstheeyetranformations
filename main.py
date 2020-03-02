@@ -34,7 +34,7 @@ add_edge(transform, 100, 100, 0, 100, 100, 100)
 #lol
 add_edge(transform, 100, 0, 0, 100, 0, 100)
 
-#make_scale(transform,2,2,2)
+make_scale(transform,2,2,2)
 
 draw_lines( transform, screen, color )
 display(screen)

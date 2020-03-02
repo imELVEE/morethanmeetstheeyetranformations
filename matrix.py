@@ -17,7 +17,7 @@ def make_scale(matrix, x, y, z ):
           [0,y,0,0],
           [0,0,z,0],
           [0,0,0,1]]
-    matrix_mult(matrix,id)
+    matrix_mult(id,matrix)
 
 def make_rotX( theta ):
     pass
