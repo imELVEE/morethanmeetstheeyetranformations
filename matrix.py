@@ -10,10 +10,10 @@ z0  z1  ... zn
 import math
 
 def make_translate(matrix, x, y, z ):
-    id = [[1,0,0,x],
-          [0,1,0,y],
-          [0,0,1,z],
-          [0,0,0,1]]
+    id = [[1,0,0,0],
+          [0,1,0,0],
+          [0,0,1,0],
+          [x,y,z,1]]
     matrix_mult(id,matrix)
 
 def make_scale(matrix, x, y, z ):
