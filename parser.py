@@ -62,6 +62,9 @@ def parse_file( fname, points, transform, screen, color ):
 
         if commands[i] == 'apply\n':
             matrix_mult(transform,points)
+            for r in range(len(points)):
+                for c in range(len(points[r])):
+                    points[r][c] = int(points[r][c])
 
         if commands[i] == 'display\n':
             clear_screen(screen)
