@@ -9,7 +9,7 @@ z0  z1  ... zn
 """
 import math
 
-def make_translate( x, y, z ):
+def make_translate(matrix, x, y, z ):
     id = [[1,0,0,x],
           [0,1,0,y],
           [0,0,1,z],
